@@ -25,13 +25,17 @@ img {
    max-width: 100%;
 }
 
+input,textarea {
+   border: 2px solid #707070;
+}
+
 hr {
    margin: 0;
 }
 
 /* layout */
 .container {
-   width: 1296px;
+   max-width: 1296px;
    margin: 0 auto;
    padding: 12px;
 }
@@ -42,6 +46,44 @@ hr {
 
 .main-btn {
    padding: 6px 12px;
+}
+
+.footer-link-grid {
+    /* grid-template-columns: repeat(5, 1fr); */
+    grid-template-columns: repeat(5, minmax(auto, 1fr));
+    gap: 0 48px;
+}
+
+.footer-icon-grid {
+   grid-template-columns: repeat(3, 1fr);
+   gap: 0 32px;
+}
+
+.v1-main-bg-img {
+   background-image: url(../img/home-header.png);
+}
+
+.v1-section1-grid {
+   grid-template-columns: repeat(4,1fr);
+   gap: 0 24px;
+}
+
+.v1-section2-grid {
+   grid-template-columns: repeat(3,1fr);
+   gap: 0 24px;
+}
+
+.v1-section3-grid {
+   grid-template-columns: repeat(2, 1fr);
+}
+
+.v1-section3-bg-img {
+   background-image: url(../img/index-bg.png)
+}
+
+.v1-section4-grid {
+   grid-template-columns: repeat(4, 1fr);
+   gap: 24px;
 }
 
 .section1-img {
@@ -72,6 +114,9 @@ hr {
 
 .footer-icon {
    width: 48px;
+}
+
+.footer-section2-icon {
    margin-right: 22px;
 }
 
@@ -157,6 +202,10 @@ hr {
    cursor: pointer;
    color: #fff;
    background: #AA0601;
+}
+
+.v1-color-base {
+   color: #650300;
 }
 
 .color-block {
@@ -475,6 +524,10 @@ hr {
    margin-bottom: 60px;
 }
 
+.mb-18 {
+   margin-bottom: 72px;
+}
+
 .mb-20 {
    margin-bottom: 80px;
 }
@@ -525,4 +578,45 @@ hr {
 .main-nav-effect:hover {
    cursor: pointer;
    border-bottom: 5px solid #AA0601;
+}
+
+/* media */
+@media(max-width: 768px) {
+   .v1-main-bg-img {
+      background-image: url(../img/home-header-sm.png);
+   }
+   .container {
+      width: auto;
+      margin: 0 36px;
+   }
+   .v1-section1-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+   }
+   .v1-section2-grid {
+      max-width: 336px;
+      margin: 0 auto;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px 0;
+   }
+   .v1-section3-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px 0;
+   }
+   .v1-section3-bg-img {
+      background-image: url(../img/index-bg-sm.png)
+   }
+
+   .v1-section4-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+   }
+
+   .footer-icon-grid {
+      gap: 0 16px;
+   }
+
+   .footer-icon {
+      width: 40px;
+   }
 }
