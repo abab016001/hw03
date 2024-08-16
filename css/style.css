@@ -37,7 +37,7 @@ hr {
 .container {
    max-width: 1296px;
    margin: 0 auto;
-   padding: 12px;
+   padding: 0 12px;
 }
 
 .header-logo {
@@ -46,6 +46,23 @@ hr {
 
 .main-btn {
    padding: 6px 12px;
+}
+
+.product-header-grid {
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.product-header-nav {
+   margin-right: -1px;
+   padding: 24px 0;
+   font-size: 36px;
+   font-weight: bolder;
+   border-left: 1px solid #DCDCDC;
+   border-right: 1px solid #DCDCDC;
+}
+
+.product-header-nav-selected {
+   border-bottom: 5px solid #AA0601;
 }
 
 .footer-link-grid {
@@ -71,6 +88,14 @@ hr {
 .v1-section2-grid {
    grid-template-columns: repeat(3,1fr);
    gap: 0 24px;
+}
+
+.v1-section3-h2 {
+   margin-right: -1px;
+   padding: 4px 0;
+   background: #fff;
+   text-align: center;
+   border-right: 1px solid #DCDCDC;
 }
 
 .v1-section3-grid {
@@ -544,6 +569,10 @@ hr {
    padding: 12px 0;
 }
 
+.p6-0 {
+   padding: 24px 0;
+}
+
 .p20-0 {
    padding: 80px 0;
 }
@@ -571,13 +600,13 @@ hr {
 }
 
 .main-nav-effect {
-   border-bottom: 5px solid #aa070100;
-   transition: border-bottom 0.3s;
+   color: #000;
+   transition: background-color 0.2s;
 }
 
 .main-nav-effect:hover {
    cursor: pointer;
-   border-bottom: 5px solid #AA0601;
+   color: #AA0601;
 }
 
 /* media */
@@ -610,6 +639,17 @@ hr {
    .v1-section4-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+   }
+
+   .product-gap {
+      gap: 40px 24px;
+      grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
+   }
+
+   .product-header-nav {
+      padding: 16px 0;
+      font-size: 24px;
+      /* font-weight: bolder; */
    }
 
    .footer-icon-grid {

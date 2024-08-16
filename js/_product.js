@@ -53,17 +53,17 @@ function category(_name, _chi_name, _list, _grid) {
 }
 // ===========================
 function List(_category) {
-    if (_category == "" || _category == "#OPTICAL") {
+    if (_category == "" || _category == "OPTICAL") {
         return category("Celluloid Combi", "賽璐珞鈦金屬混合鏡框", OPTICAL, grid_OPTICAL);
-    } else if (_category == "#SUNGLASSES") {
+    } else if (_category == "SUNGLASSES") {
         return category("2020 NEW COLLECTION", "賽璐珞鈦金屬混合鏡框", SUNGLASSES, grid_SUNGLASSES);
     }
     return null;
 }
 function Banner(_category) {
-    if (_category == "" || _category == "#OPTICAL") {
+    if (_category == "" || _category == "OPTICAL") {
         return ["product-header-1", "product-header-2"];
-    } else if (_category == "#SUNGLASSES") {
+    } else if (_category == "SUNGLASSES") {
         return ["product-header-3", "product-header-4"];
     }
     return null;

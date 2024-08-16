@@ -19,15 +19,25 @@ function LoadHtml(elementId, _url) {
         });
 }
 
-function LoadProduct(product, productGroupGridId) {
+function LoadProduct(product) {
+    var productGroupGrid = document.getElementById("productGroupGrid");
+    var no_productGroupGrid = document.getElementById("no-productGroupGrid");
     if (product == null) {
-        LoadHtml(productGroupGridId, "../page/product-none.html");
+        productGroupGrid.style.display = "none";
+        no_productGroupGrid.style.display = "";
         return;
+    } else {
+        productGroupGrid.style.display = "";
+        no_productGroupGrid.style.display = "none";
     }
-    var productGroupGrid = document.getElementById(productGroupGridId);
-    var productGrid = productGroupGrid.querySelector("#productGrid");
     productGroupGrid.querySelector("#product_name").textContent = product.name;
     productGroupGrid.querySelector("#product_chi_name").textContent = product.chi_name;
+
+    var productGrid = productGroupGrid.querySelector("#productGrid");
+    productGrid.innerHTML = "";
+    productGrid.className = "";
+    productGrid.classList.add("d-grid");
+    productGrid.classList.add("product-gap");
     productGrid.classList.add(getGridCol(product.grid));
 
     var url = "../page/product.html";
@@ -58,24 +68,32 @@ function LoadProduct(product, productGroupGridId) {
 
 // 載入橫幅廣告
 function LoadBanner(bannerList, parentId) {
+    var product_banner = document.getElementById(parentId);
+    product_banner.innerHTML = "";
+    
     if (bannerList == null) return;
     for (banner of bannerList) {
         var innerHTML =
             "<a href='#'><img class='product-banner-img w-1' src='imgsrc'></a>"
                 .replaceAll('imgsrc', getImgSrc(banner));
         var li = document.createElement("li").innerHTML = innerHTML;
-        document.getElementById(parentId).innerHTML += li;
+        product_banner.innerHTML += li;
     }
 }
 
 // 載入上一頁、頁碼、下一頁
 function LoadPage(product, pageGroupGridId, pageCnt, pageSelected) {
-    if (product == null) {
-        document.getElementById(pageGroupGridId).innerHTML = "";
-        return;
-    }
     var pageGroupGrid = document.getElementById(pageGroupGridId);
+    if (product == null) {
+        pageGroupGrid.style.display = "none";
+        return;
+    } else {
+        pageGroupGrid.style.display = "";
+    }
+
     var pageGrid = pageGroupGrid.querySelector("div #pageGrid");
+    pageGrid.innerHTML = "";
+
     var index = 1;
     for (var i = 0; i < pageCnt; i++) {
         var innerHTML =
@@ -176,7 +194,7 @@ function LoadQuestion(questionList, questionGroupGridId) {
                 h3_0.textContent = question.title;
                 h3_0.classList.add("h3");
                 h3_0.classList.add("mb-6");
-                
+
                 var ul_0 = document.createElement("ul");
                 for (q of question.list) {
                     var li = html;
@@ -198,7 +216,7 @@ function LoadQuestion(questionList, questionGroupGridId) {
 // 載入下拉選單
 function LoadSelectByMapList(paramMapList, parentId) {
     var select = document.getElementById(parentId);
-    for(paramMap of paramMapList) {
+    for (paramMap of paramMapList) {
         var option = document.createElement("option");
         option.value = paramMap.key;
         option.textContent = paramMap.value;
@@ -209,7 +227,7 @@ function LoadSelectByMapList(paramMapList, parentId) {
 // 載入Google地圖
 function LoadGoogleMapList(paramMapList, parentId) {
     var select = document.getElementById(parentId);
-    for(paramMap of paramMapList) {
+    for (paramMap of paramMapList) {
         var option = document.createElement("option");
         option.value = paramMap.key;
         option.textContent = paramMap.value;

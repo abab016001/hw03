@@ -19,10 +19,29 @@
         document.addEventListener("DOMContentLoaded", processMain);
         function processMain() {
             Util.LoadHtml("product-header"); // 載入商品頁-頁首
+            processLoad();
+        }
+
+        function processQuery(targetObj) {
+            var productHeaderGrid = document.getElementById("productHeaderGrid");
+            productHeaderGrid.querySelectorAll('li').forEach(item => {
+                item.classList.remove("product-header-nav-selected");
+            });
+            targetObj = targetObj == null ? productHeaderGrid.children[0] : targetObj;
+            targetObj.classList.add("product-header-nav-selected");
+            var h5 = targetObj.children[0].textContent;
+            processLoad(h5);
+        }
+
+        function processLoad(h5) {
+            h5 = h5 == null ? '' : h5;
+            console.log("h5: " + h5);
+            // 載入橫幅廣告
+            Util.LoadBanner(Product.Banner(h5), "product-banner");
             // 載入商品
-            Util.LoadBanner(Product.Banner(location.hash), "product-banner"); // 載入橫幅廣告
-            Util.LoadProduct(Product.List(location.hash), "productGroupGrid"); // 載入商品
-            Util.LoadPage(Product.List(location.hash), "pageGroupGrid", 5, 2); // 載入頁碼
+            Util.LoadProduct(Product.List(h5));
+            // 載入頁碼
+            Util.LoadPage(Product.List(h5), "pageGroupGrid", 5, 2);
         }
     </script>
 </head>
@@ -32,9 +51,11 @@
     <div id="header"></div>
     <!-- 內文 -->
     <main>
+        <!-- 嵌入 product-banner -->
         <div class="container">
-            <!-- 嵌入 product-banner -->
             <div id="product-header"></div>                    
+        </div>
+        <div class="d-flex row-x-center">
             <ul id="product-banner" class="d-flex"></ul>
         </div>
     </main>
@@ -46,6 +67,7 @@
                  <h4 id="product_chi_name" class="h4 text-center mb-8"></h4>
                  <ul id="productGrid" class="d-grid product-gap"></ul>
              </div>
+             <h2 id="no-productGroupGrid" class="h2 text-center" style="display: none;">無商品</h2>
             <!-- 載入 頁碼 -->
             <div id="pageGroupGrid">
                 <div class="d-flex row-x-center">
