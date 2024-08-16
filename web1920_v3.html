@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="text/javascript" src="js/_pageHref.js"></script>
+    <script type="text/javascript" src="js/_util.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/_store.js"></script>
+    <title>Document</title>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", processMain);
+        function processMain() {
+            processQuery();
+        }
+
+        function processQuery() {
+            var location = document.getElementById('store_location').value;
+            LoadStore(Store.List(location), "storeGrid");
+        }
+
+        function processView(paramObj) {
+            Common.processSwitchFrameWithExcute('v6', 'processView', paramObj);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 嵌入 共用js -->
+    <div id="common-js"></div>
+    <!-- 嵌入 header -->
+    <div id="header"></div>
+    <!-- 內文 -->
+    <main class="base-frame">
+        <div class="container">
+            <h2 class="title-border">門市據點</h2>
+            <div class="d-flex row-y-center mb-10">
+                <label class="h3 mr-4" for="store_location">選擇地區</label>
+                <select class="w-3 select cursor-pointer" name="store_location" id="store_location"
+                    onchange="processQuery()">
+                    <option value="">---</option>
+                    <option value="A17">台北市</option>
+                    <option value="B54">台中市</option>
+                    <option value="E77">高雄市</option>
+                </select>
+            </div>
+            <ul id="storeGrid" class="d-grid grid-col-3 store-gap"></ul>
+        </div>
+    </main>
+    <!-- 嵌入footer -->
+    <div id="footer"></div>
+</body>
+
+</html>

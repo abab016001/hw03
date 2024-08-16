@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* base */
+* {
+   box-sizing: border-box;
+   /* outline: 2px solid #00bd10; */
+}
+
+body {
+   font-family: Roboto, "Noto Sans TC", sans-serif;
+   line-height: 1.5;
+}
+
+a {
+   display: inline-block;
+   text-decoration: none;
+   color: #000;
+}
+
+img {
+   display: inline-block;
+   align-items: center;
+   height: auto;
+   max-width: 100%;
+}
+
+hr {
+   margin: 0;
+}
+
+/* layout */
+.container {
+   width: 1296px;
+   margin: 0 auto;
+   padding: 12px;
+}
+
+.header-logo {
+   max-width: 80px;
+}
+
+.main-btn {
+   padding: 6px 12px;
+}
+
+.section1-img {
+   max-height: 83.33px;
+}
+
+.section4-card {
+   border: 1px #00000029;
+   box-shadow: 0 2px 6px #00000029;
+}
+
+.section4-card-text {
+   padding: 16px;
+}
+
+.section5-btn {
+   padding: 16px 176px;
+}
+
+.section5-input {
+   padding: 6px 12px;
+}
+
+.footer {
+   padding-top: 48px;
+   padding-bottom: 32px;
+}
+
+.footer-icon {
+   width: 48px;
+   margin-right: 22px;
+}
+
+.base-frame {
+   padding-top: 96px;
+   padding-bottom: 80px;
+}
+
+.product-gap {
+   gap: 80px 24px;
+}
+
+.store-gap {
+   gap: 48px 24px;
+}
+
+.store-icon {
+   margin-right: 11px;
+}
+
+.store-btn {
+   width: 100%;
+   font-size: 19px;
+   padding: 16px 0;
+   color: #fff;
+   background: #000;
+}
+
+.store-title {
+   padding: 8px 24px;
+}
+
+.store-content {
+   padding: 16px 24px;
+   margin-bottom: -8px;
+}
+
+.store-border {
+   border: 1px solid #00000020;
+}
+
+.blog-ul {
+   margin-bottom: -60px;
+   padding-bottom: 124px;
+}
+
+/* component */
+.btn {
+   font-size: 16px;
+   background: #AA0601;
+   color: #fff;
+   border: none;
+}
+
+.btn-page-arrow {
+   cursor: pointer;
+   padding: 10px 12px;
+   font-size: 19px;
+   color: #555555;
+   background: #fff;
+   border: 1px solid #555555;
+}
+
+.btn-page-arrow:hover {
+   background: #F2F2F2;
+}
+
+.btn-page {
+   padding: 12px 16px;
+   font-size: 18px;
+   color: #555555;
+   background: #fff;
+   border: 1px solid #555555;
+}
+
+.btn-page-selected {
+   font-size: 18px;
+   color: #fff;
+   background: #000;
+}
+
+.btn-page:hover {
+   cursor: pointer;
+   color: #fff;
+   background: #AA0601;
+}
+
+.color-block {
+   display: block;
+   width: 24px;
+   height: 24px;
+   border-radius: 4px;
+   margin-right: 8px;
+   background: #000;
+}
+
+.select {
+   padding: 6px 12px;
+   font-size: 18px;
+   color: #495057;
+}
+.more {
+   font-size: 36px;
+   font-weight: 900;
+   color: #650300;
+}
+.title-border {
+   font-size: 48px;
+   font-weight: bolder;
+   padding: 0 12px;
+   margin-bottom: 32px;
+   border-left: 8px solid #9F1213;
+   margin-left: -8px;
+}
+
+/* utilities */
+.bg-img {
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+/* 背景-主色 */
+.bg-base {
+   background: #AA0601;
+}
+
+/* 背景-輔助色 */
+.bg-sub {
+   background: #FBF2F2;
+}
+
+/* 背景-強調色 */
+.bg-black {
+   background: #000;
+}
+
+.bg-white {
+   background: #fff;
+}
+
+/* 產品色 */
+.bg-product-1 {
+   background: #000;
+}
+
+.bg-product-2 {
+   background: #B75929;
+}
+
+/* 文字-主色 */
+.color-base {
+   color: #AA0601;
+}
+.color-base-dark{
+   color: #650300
+}
+/* 文字-輔助色 */
+.color-sub {
+   color: #FBF2F2;
+}
+
+/* 文字-強調色 */
+.color-black {
+   color: #000;
+}
+
+.color-black2 {
+   color: #212529;
+}
+
+.color-white {
+   color: #fff;
+}
+
+.color-gray {
+   color: #707070;
+}
+/* display */
+.d-block {
+   display: block;
+}
+
+.d-flex {
+   display: flex;
+}
+
+.d-flex-column {
+   display: flex;
+   flex-direction: column;
+}
+
+.d-grid {
+   display: grid;
+}
+
+/* gird */
+.grid-col-3 {
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-col-4 {
+   grid-template-columns: repeat(4, 1fr);
+}
+
+/* flex */
+.flex-wrap {
+   flex-wrap: wrap;
+}
+
+.row-x-center {
+   flex-direction: row;
+   justify-content: center;
+}
+
+.row-y-center {
+   flex-direction: row;
+   align-items: center;
+}
+
+.column-x-center {
+   flex-direction: column;
+   align-items: center;
+}
+
+.space-between {
+   justify-content: space-between;
+}
+
+/* font */
+.h1 {
+   font-size: 64px;
+   font-weight: bolder;
+}
+
+.h2 {
+   font-size: 48px;
+   font-weight: bolder;
+}
+
+.h2-i {
+   font-size: 48px;
+   font-style: italic;
+   font-weight: bolder;
+}
+
+.h3 {
+   font-size: 24px;
+   font-weight: bolder;
+}
+
+.h4 {
+   font-size: 42px;
+   font-weight: bolder;
+}
+
+.h5 {
+   font-size: 32px;
+   font-weight: bolder;
+}
+
+.h6{
+   font-size: 20px;
+   font-weight: bolder;
+}
+
+.p1.p1 {
+   font-size: 36px;
+}
+
+.p2 {
+   font-size: 20px;
+}
+
+.p3 {
+   font-size: 16px;
+}
+
+.p4 {
+   font-size: 14px;
+}
+
+.p5 {
+   font-size: 32px;
+}
+
+.p6 {
+   font-size: 24px;
+}
+
+.text-center {
+   text-align: center;
+}
+
+.text-end {
+   text-align: end;
+}
+
+/* 間距 */
+.m2-0 {
+   margin: 8px 0;
+}
+
+.m3-0 {
+   margin: 12px 0;
+}
+
+.m6-0 {
+   margin: 24px 0;
+}
+
+.m0-3 {
+   margin: 0 12px;
+}
+
+.m0-6 {
+   margin: 0 24px;
+}
+
+.m0-8 {
+   margin: 0 32px;
+}
+
+.m0-12 {
+   margin: 0 48px;
+}
+
+.m0-3-reverse {
+   margin: 0 -12px;
+}
+
+.m0-6-reverse {
+   margin: 0 -24px;
+}
+
+.m0-8-reverse {
+   margin: 0 -32px;
+}
+
+.m0-12-reverse {
+   margin: 0 -48px;
+}
+
+.mt-a {
+   margin-top: auto;
+}
+
+.ml-4 {
+   margin-left: 16px;
+}
+
+.ml-a {
+   margin-left: auto;
+}
+
+.ml-1-reverse {
+   margin-left: -4px;
+}
+.mr-4{
+   margin-right: 16px;
+}
+.mr-6{
+   margin-right: 24px;
+}
+.mb-1 {
+   margin-bottom: 4px;
+}
+
+.mb-2 {
+   margin-bottom: 8px;
+}
+
+.mb-4 {
+   margin-bottom: 16px;
+}
+
+.mb-5 {
+   margin-bottom: 20px;
+}
+
+.mb-6 {
+   margin-bottom: 24px;
+}
+
+.mb-8 {
+   margin-bottom: 32px;
+}
+
+.mb-9 {
+   margin-bottom: 36px;
+}
+
+.mb-10 {
+   margin-bottom: 40px;
+}
+
+.mb-12 {
+   margin-bottom: 48px;
+}
+
+.mb-15 {
+   margin-bottom: 60px;
+}
+
+.mb-20 {
+   margin-bottom: 80px;
+}
+
+.mb-a {
+   margin-bottom: auto;
+}
+
+.p2-0 {
+   padding: 8px 0;
+}
+
+.p3-0 {
+   padding: 12px 0;
+}
+
+.p20-0 {
+   padding: 80px 0;
+}
+
+.p74-0 {
+   padding: 296px 0;
+}
+
+.p0-3 {
+   padding: 0 12px;
+}
+
+.p0-4 {
+   padding: 0 12px;
+}
+
+/* 尺寸 */
+.w-1 {
+   width: 100%;
+}
+
+/* effect */
+.cursor-pointer {
+   cursor: pointer;
+}
+
+.main-nav-effect {
+   border-bottom: 5px solid #aa070100;
+   transition: border-bottom 0.3s;
+}
+
+.main-nav-effect:hover {
+   cursor: pointer;
+   border-bottom: 5px solid #AA0601;
+}

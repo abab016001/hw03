@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <script type="text/javascript" src="js/_pageHref.js"></script>
+    <script type="text/javascript" src="js/_util.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/_product.js"></script>
+    
+    <title>Document</title>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", processMain);
+        function processMain() {
+            Util.LoadHtml("product-header"); // 載入商品頁-頁首
+            // 載入商品
+            Util.LoadBanner(Product.Banner(location.hash), "product-banner"); // 載入橫幅廣告
+            Util.LoadProduct(Product.List(location.hash), "productGroupGrid"); // 載入商品
+            Util.LoadPage(Product.List(location.hash), "pageGroupGrid", 5, 2); // 載入頁碼
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 嵌入 header -->
+    <div id="header"></div>
+    <!-- 內文 -->
+    <main>
+        <div class="container">
+            <!-- 嵌入 product-banner -->
+            <div id="product-header"></div>                    
+            <ul id="product-banner" class="d-flex"></ul>
+        </div>
+    </main>
+    <section class="section-product p20-0">
+        <div class="container">
+            <!-- 載入 商品 -->
+             <div id="productGroupGrid" class="mb-20">
+                 <h4 id="product_name" class="h4 text-center"></h4>
+                 <h4 id="product_chi_name" class="h4 text-center mb-8"></h4>
+                 <ul id="productGrid" class="d-grid product-gap"></ul>
+             </div>
+            <!-- 載入 頁碼 -->
+            <div id="pageGroupGrid">
+                <div class="d-flex row-x-center">
+                    <button class="btn-page-arrow">上一頁</button>
+                    <ul id="pageGrid" class="d-flex"></ul>
+                    <button class="btn-page-arrow">下一頁</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 嵌入footer -->
+    <div id="footer"></div>
+</body>
+
+</html>
